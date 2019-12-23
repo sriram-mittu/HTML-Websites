@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            background-image: url("yolo.jpg");
+            background-repeat: no-repeat;
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        }
+        
+        #words {
+            text-align: center;
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        }
+        
+        #socialmedia {
+            height: 40px;
+        }
+        
+        #nav {
+            background-image: url("yolo.jpg");
+            background-repeat: no-repeat;
+            width: 265px;
+            height: 675px;
+            border: solid 1px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+        }
+        
+        #info {
+            width: 265px;
+            height: 700px;
+            border: solid 1px;
+            border-radius: 20px;
+            background-image: url("yolo.jpg");
+            background-repeat: no-repeat;
+            text-align: center;
+            color: white;
+        }
+        
+        #footer {
+            background-color: black;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        a:link {
+            color: white;
+            text-decoration: none;
+        }
+        
+        a:active {
+            color: white;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: white;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <title>
+        Home
+    </title>
+    <script type="text/javascript">
+        function GetClock() {
+            var d = new Date();
+            var nmonth = d.getMonth(),
+                ndate = d.getDate(),
+                nyear = d.getYear();
+            if (nyear < 1000) nyear += 1900;
+            var nhour = d.getHours(),
+                nmin = d.getMinutes(),
+                nsec = d.getSeconds(),
+                ap;
+
+            if (nhour == 0) {
+                ap = " AM";
+                nhour = 12;
+            } else if (nhour < 12) {
+                ap = " AM";
+            } else if (nhour == 12) {
+                ap = " PM";
+            } else if (nhour > 12) {
+                ap = " PM";
+                nhour -= 12;
+            }
+
+            if (nmin <= 9) nmin = "0" + nmin;
+            if (nsec <= 9) nsec = "0" + nsec;
+
+            document.getElementById('clockbox').innerHTML = "" + (nmonth + 1) + " - " + ndate + " - " + nyear + " | " + nhour + " : " + nmin + " : " + nsec + " - " + ap + "";
+        }
+
+        window.onload = function() {
+            GetClock();
+            setInterval(GetClock, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <embed src="sample.wav" autostart="true" loop="false" width="2" height="2">
+    <br>
+    <div id="nav">
+        <p>
+            ======================
+        </p>
+        <i>
+    <h1>
+	 Home
+	</h1>
+  </i>
+        <p>
+            ======================
+        </p>
+        <a href="calculator.htm">
+            <p> ~ Calculator ~ <br> </p>
+        </a>
+        <a href="layout.htm">
+            <p> ~ Rubik's Cube ~ <br> </p>
+        </a>
+        <a href="snake.htm">
+            <p> ~ Snake ~ <br> </p>
+        </a>
+        <a href="newform.html">
+            <p> ~ Form ~ <br> </p>
+        </a>
+        <p>
+            <a href="keybaord.htm">
+                <p> ~ Keyboard ~ <br> </p>
+            </a>
+            <p>
+                <a href="http://srirammittu.wixsite.com/pythongallery">
+                    <p> ~ Picture Gallery ~ <br> </p>
+                </a>
+                <p>
+                    ======================
+                </p>
+                <div id="clockbox"> Time : </div>
+                <p>
+                    ======================
+                    <embed src="sample.wav" autostart="true" loop="false" width="2" height="2">
+                </p>
+                <div id="words">
+                    <p> Follow Us On :
+                    </p>
+                </div>
+                <div id="socialmedia">
+                    <a href="https://www.youtube.com/channel/UCWTV79FOkiFAEc7b3BmFjBA" target="_blank"><img src="youtube.png" style="width:50px;height:50px;" /></a>
+                    <a href="https://www.facebook.com/profile.php?id=100008196631737" target="_blank"><img src="facebook.png" style="width:50px;height:50px;" /></a>
+                    <a href="https://twitter.com/srirampasupunut" target="_blank"><img src="twitter.png" style="width:50px;height:50px;" /></a>
+                    <p>
+                        ======================
+                    </p>
+                    <p> &#169 Aura 2017 </p>
+                    <p>
+                        ======================
+
+                    </p>
+                    <br>
+                </div>
+    </div>
+</body>
+
+</html>

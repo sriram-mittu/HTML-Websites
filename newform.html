@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <style>
+        .heading {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        a:link {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        a:active {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        a:visited {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        a:hover {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .nav {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            position: absolute;
+            right: 10px;
+            top: 265px;
+            background-image: url("yolo.jpg");
+            width: 265px;
+            height: 465px;
+            border: solid 1px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            margin: 10px;
+        }
+        
+        #result {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            background-image: url("yolo.jpg");
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            width: 265px;
+            height: 250px;
+            border: solid 1px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            margin: 10px;
+        }
+        
+        body {
+            background-image: url("yolo.jpg");
+        }
+        
+        .body {
+            width: 455px;
+            text-align: center;
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            color: white;
+            margin: 0 auto;
+        }
+        
+        .heading {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            size: 21px;
+            text-align: center;
+        }
+        
+        #form {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            size: 21px;
+            text-align: center;
+            background-image: url("yolo.jpg");
+            border: solid 1px;
+            border-radius: 20px;
+            color: white;
+            width: 300px;
+            height: 570px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function doMath() {
+            var inputNum1 = document.calc.result.value;
+            var result = Math.sqrt(inputNum1);
+            document.calc.result.value = result;
+        }
+
+        function GetClock() {
+            var d = new Date();
+            var nmonth = d.getMonth(),
+                ndate = d.getDate(),
+                nyear = d.getYear();
+            if (nyear < 1000) nyear += 1900;
+            var nhour = d.getHours(),
+                nmin = d.getMinutes(),
+                nsec = d.getSeconds(),
+                ap;
+
+            if (nhour == 0) {
+                ap = " AM";
+                nhour = 12;
+            } else if (nhour < 12) {
+                ap = " AM";
+            } else if (nhour == 12) {
+                ap = " PM";
+            } else if (nhour > 12) {
+                ap = " PM";
+                nhour -= 12;
+            }
+
+            if (nmin <= 9) nmin = "0" + nmin;
+            if (nsec <= 9) nsec = "0" + nsec;
+
+            document.getElementById('clockbox').innerHTML = +(nmonth + 1) + " - " + ndate + " - " + nyear + "  <br> " + nhour + " : " + nmin + " - " + ap;
+        }
+
+        window.onload = function() {
+            GetClock();
+            setInterval(GetClock, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="form">
+        <div class="heading">
+            <i>
+    <h1>
+	 Form
+	</h1>
+   </div>
+<div ng-app="">
+  <p>First Name: </p>
+<input type="text" ng-model="name" placeholder="Enter your First Name">
+<br>
+	  <p>
+	   Last Name:
+	  </p>
+    <input type=text ng-model="lastname" placeholder="Enter your Last Name">
+    <p>
+    State
+    </p>
+      <select type=select ng-model="state" placeholder="Select your State">
+         <option>Alabama
+         <option>Alaska
+         <option>Arizona
+         <option>Arkansas
+         <option>California
+         <option>Colorado
+         <option>Connecticut
+         <option>Delaware
+         <option>Florida
+         <option>Georgia
+         <option>Hawaii
+         <option>Idaho
+         <option>Illinois
+         <option>Indiana
+         <option>Iowa
+         <option>Kansas
+         <option>Kentucky
+         <option>Louisiana
+         <option>Maine
+         <option>Maryland
+         <option>Massachusetts
+         <option>Michigan
+         <option>Minnesota
+         <option>Mississippi
+         <option>Missouri
+         <option>Montana
+         <option>Nebraska
+         <option>Nevada
+         <option>New Hampshire
+         <option>New Jersey
+         <option>New Mexico
+         <option>New York
+         <option>North Carolina
+         <option>North Dakota
+         <option>Ohio
+         <option>Oklahoma
+         <option>Oregon
+         <option>Pennsylvania
+         <option>Rhode Island
+         <option>South Carolina
+         <option>South Dakota
+         <option>Tennessee
+         <option>Texas
+         <option>Utah
+         <option>Vermont
+         <option>Virginia
+         <option>Washington
+         <option>West Virginia
+         <option>Wisconsin
+         <option>Wyoming
+	  </select>
+      <p>
+	   Zip:
+	  </p>
+    <input type=text ng-model="zip" placeholder="Enter your Zip">
+    <p>
+	   Phone:
+	  </p>
+    <input type=text ng-model="phone" placeholder="     (___)-___-___">
+        <p>
+	   Address:
+	  </p>
+    <input type=text ng-model="add" placeholder="Enter your Address">
+    <div id="result">
+        <u>  <h1>Result</h1>  </u>
+      <h2> Hello, {{name}} {{lastname}}</h2>
+      <h3> State: {{state}}            <br>
+      <h3> Zip:   {{zip}}              <br>
+      <h3> Phone: {{phone}}    <br>
+      <h3> Address: {{add}}            <br>
+    </div>
+</div>
+</div>
+    <div class="nav">
+    <br>
+       ==============
+       <i>
+     <h1 style="font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;">
+	 Sidebar
+	</h1>
+	</i>
+            <p>
+                ==============
+                <a href="links.htm">
+                    <p style="font-family: " Avant Garde ", Avantgarde, "Century Gothic ", CenturyGothic, "AppleGothic ", sans-serif;"> Home <br> </p>
+                </a>
+                ==============
+            </p>
+            <div id="clockbox" style="font-family: " Avant Garde ", Avantgarde, "Century Gothic ", CenturyGothic, "AppleGothic ", sans-serif;;"> Time : </div>
+            <p>
+                ==============
+            </p>
+            <div id="words">
+                <p>
+                    Follow Us On :
+                </p>
+            </div>
+            <div id="socialmedia">
+                <a href="https://www.youtube.com/channel/UCWTV79FOkiFAEc7b3BmFjBA" target="_blank"><img src="youtube.png" style="width:50px;height:50px;" /></a>
+                <a href="https://www.facebook.com/profile.php?id=100008196631737" target="_blank"><img src="facebook.png" style="width:50px;height:50px;" /></a>
+                <a href="https://twitter.com/srirampasupunut" target="_blank"><img src="twitter.png" style="width:50px;height:50px;" /></a>
+                <p>
+                    ==============
+                </p>
+                <p class="marble" style="font-family: " Avant Garde ", Avantgarde, "Century Gothic ", CenturyGothic, "AppleGothic ", sans-serif;;"> &#169 Aura 2017 </p>
+                <p>
+                    ==============
+                </p>
+                <br>
+            </div>
+        </div>
+</body>
+
+</html>
